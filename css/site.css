@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+}
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+/* barrade navegação */
+nav{
+    background: transparent;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+}
+/* div com a logo e o nome da marca */
+.log{
+    width: 400px;
+    height: 60px;
+    display: inline-block;
+    padding-left: 20px;
+}
+/* imagem da logo */
+.log img{
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+/* nome da marca "Frenemy" */
+.log label.logo{
+    color: #ffffff;
+    font-size: 35px;
+    line-height: 60px;
+    padding: 0 10px;
+    font-weight: bold;
+    font-family: Poppins, Helvetica, 'Times New Roman', Times, serif;
+}
+/* lista ordenada da nav */
+nav ul{
+    float: right;
+    margin-right: 40px;
+}
+/* itens da lista ordenada */
+nav ul li{
+    display: inline-block;
+    line-height: 60px;
+    margin: 0 10px;
+}
+/* referencia ao a (address) ferramenta de hiper link */
+nav ul li a{
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 7px 14px;
+    color: #ffffff;
+    font-family: Poppins, Helvetica, 'Times New Roman', Times, serif;
+}
+/* a.active(referencia ao "a" que tem a classe active)a:hover(para quando passar o mouse no "a") */
+a.active,a:hover{
+    border-bottom: 3px solid #ffffff;
+}
+/* aquelas barras que ativam o menu */
+.checkbtn{
+    font-size: 30px;
+    color: #ffffff;
+    float: right;
+    line-height: 60px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+/* faz desaparecer a checkbox */
+#check{
+    display: none;
+}
+/* pra quando dimineuir a tela */
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+/* pra quando diminuir muito a tela o menu mudar */
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgb(68, 68, 68);
+        opacity: 0.9;
+        top: 60px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+        z-index: 2;
+    }
+    nav ul li a{
+        font-size: 20px;
+        z-index: 2;
+    }
+    a.active,a:hover{
+        background: none;
+        color: #ffffff;
+        z-index: 2;
+    }
+    /* pra quando a checkbox estiver ativada */
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+.imgmain{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/imgmain.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.imgmain img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+.banner h1{
+    color: #ffffff;
+    font-size: 100px;
+    font-family: Poppins, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding: 0px 18px;
+    border: 7px double #ffffff;
+    text-shadow: 5px 5px 5px #191D21, 5px 5px 5px #191D21; 
+    z-index: 1;
+}
+.parallax1, .parallax2, .parallax3{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.parallax1{
+    background-image: url(../img/p1.jpg);
+}
+.parallax2{
+    background-image: url(../img/p2.jpg);
+}
+.parallax3{
+    background-image: url(../img/p3.jpg);
+}
+.b1, .b2, .b3, .b4{
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 50px 50px;
+    background-color: rgb(190, 190, 190);
+    font-family: Poppins, Helvetica, Arial, Helvetica, sans-serif;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.imgb{
+    width: 400px;
+    height: 400px;
+}
+.imgb img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.textob{
+    width: 600px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.textob h1{
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    color: #262626;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+}
+.textob p{
+    font-size: 18px;
+    text-align: justify;
+    margin: 20px auto;
+}
+@media screen and (max-width:768px){
+    .b1, .b2, .b3, .b4{
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding: 50px 50px;
+        background-color: rgb(190, 190, 190);
+        font-family: Poppins, Arial, Helvetica, sans-serif;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
+    .imgb{
+        width: 300px;
+        height: 300px;
+    }
+    .textob{
+        width: 400px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 20px 20px 20px;
+    }
+    .textob h1{
+        text-align: center;
+    }
+}
+@media screen and (min-width:740px){
+    .b1, .b2, .b3, .b4{
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding: 50px 50px;
+        background-color: rgb(190, 190, 190);
+        font-family: Poppins,Arial, Helvetica, sans-serif;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
+    .imgb{
+        width: 500px;
+        height: 500px;
+    }
+    .textob{
+        width: 600px;
+        height: auto;
+        margin-left: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .textob h1{
+        text-align: center;
+    }
+}
+@media screen and (min-width:950px){
+    .b1, .b2, .b3, .b4{
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding: 50px 50px;
+        background-color: rgb(190, 190, 190);
+        font-family: Poppins,Arial, Helvetica, sans-serif;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+    }
+    .imgb{
+        width: 400px;
+        height: 400px;
+    }
+    .textob{
+        width: 500px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .textob h1{
+        text-align: left;
+    }
+}
+@media screen and (min-width:1200px){
+    .b1, .b2, .b3, .b4{
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding: 50px 50px;
+        background-color: rgb(190, 190, 190);
+        font-family: Poppins,Arial, Helvetica, sans-serif;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+    }
+    .imgb{
+        width: 400px;
+        height: 400px;
+    }
+    .textob{
+        width: 600px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .textob h1{
+        text-align: left;
+    }
+}
+footer{
+    background: #111111;
+    height: auto;
+    width: 100%;
+    color: #ffffff;
+    font-family: 'arial', Helvetica, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.footer1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer1 h3{
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer1 p{
+    max-width: 500px;
+    margin: 7px auto;
+    line-height: 20px;
+    font-size: 14px;
+}
+.redes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+    width: 60%;
+}
+.redes .line{
+    margin: 0 10px;
+}
+.redes a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.redes a i{
+    font-size: 20px;
+    transition: color 0.5s ease;
+}
+.redes a:hover{
+    color: rgb(45, 178, 255);
+    border-bottom: 0;
+}
+.footer2{
+    background: #000000;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer2 p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer2 a{
+    color: #ffffff;
+}
+.footer2 a:hover{
+    color: rgb(45, 178, 255);
+    border-bottom: 0;
+}
+.footer2 span{
+    text-transform: uppercase;
+    opacity: 0.5;
+    font-weight: 200;
+}
